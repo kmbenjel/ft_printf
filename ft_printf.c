@@ -6,13 +6,11 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/14 09:13:06 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/14 09:44:58 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft/libft.h"
 
-// FT_PRINTF is included in LIBFT
-
-ft_printf(const char *, ...)
+int	ft_printf(const char *, ...)
 {
 }
