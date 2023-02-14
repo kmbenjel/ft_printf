@@ -6,11 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/14 09:50:45 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/14 09:51:38 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft/libft.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *, ...)
 {
+	return (0);
 }
