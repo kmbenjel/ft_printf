@@ -1,1 +1,12 @@
-#include "../printf.h" ft_print_decimal.c ft_print_hexadecimal_lowercase.c ft_print_hexadecimal_uppercase.c ft_print_integer.c ft_print_percent.c ft_print_pointer.c ft_print_string.c ft_print_unsigned.c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_character.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/18 13:40:59 by kbenjell          #+#    #+#             */
+/*   Updated: 2023/02/18 13:42:27 by kbenjell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "../printf.h"
