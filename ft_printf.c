@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/18 18:48:35 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:50:38 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -69,11 +69,11 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_putchar_fd(*i);
+			ft_putchar_fd(*i, 1);
 			*ol += 1;
 		}
 	}
-	va_end(va_list ap);
+	va_end(ap);
 	return (*ol);
 }
 
