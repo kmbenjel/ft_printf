@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/18 18:13:12 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:20:06 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -68,11 +68,10 @@ int	ft_printf(const char *format, ...)
 				ft_invalid_spec(*next);
 		}
 		else
-			ft_putchar(*i);
-		i++;
+			output_length += ft_print_character(*i);
+		return (output_length);
 	}
 	va_end(va_list ap);
-	return (output_length);
 }
 
 // i iterates on every character in the format.
