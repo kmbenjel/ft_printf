@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/18 18:21:52 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:48:35 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -18,7 +18,7 @@ int	ft_isspec(char c)
 	return (0);
 }
 
-int	ft_invalid_spec(char c)
+void	ft_invalid_spec(char c)
 {
 	char	*message;
 
@@ -31,7 +31,7 @@ int	ft_invalid_spec(char c)
 int	ft_convert(char spec)
 {
 	if (spec == 'c')
-		ft_print_character();
+		*ol += ft_print_character();
 	if (spec == 's')
 		ft_print_string();
 	if (spec == 'p')
@@ -50,7 +50,7 @@ int	ft_convert(char spec)
 
 int	ft_printf(const char *format, ...)
 {
-	int		output_length;
+	int		*ol;
 	char	*i;
 	char	*next;
 	va_list	ap;
@@ -70,12 +70,13 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			ft_putchar_fd(*i);
-			output_length += 1;
+			*ol += 1;
 		}
 	}
 	va_end(va_list ap);
-	return (output_length);
+	return (*ol);
 }
 
 // i iterates on every character in the format.
 // ap stands for: Argument Pointer.
+// ol stands for: Output Length.
