@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/18 17:59:59 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:09:23 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -30,8 +30,14 @@ int	ft_invalid_spec(char c)
 
 int	ft_convert(char spec)
 {
-	if spec
-		== 'c' ft_print_character();
+	if (spec == 'c')
+		ft_print_character();
+	else if (spec == 's')
+		ft_print_string();
+	else if (spec == 'p')
+		ft_print_pointer();
+	else if (spec == 'd' || spec == 'i')
+		ft_print_decimal();
 }
 
 int	ft_printf(const char *format, ...)
@@ -48,7 +54,7 @@ int	ft_printf(const char *format, ...)
 		next = i + 1;
 		if (*i == '%')
 		{
-			if (isspec(*next))
+			if (ft_isspec(*next))
 				ft_convert(*next);
 			else
 				ft_invalid_spec(*next);
