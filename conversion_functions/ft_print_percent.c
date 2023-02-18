@@ -6,8 +6,19 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:37 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/18 13:42:27 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:47:22 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../printf.h"
-//spec = conversion specifier
+
+int	ft_print_percent(void)
+{
+	char	percent;
+
+	percent = '%';
+	ft_putchar_fd(percent, 1);
+	return (1);
+}
+
+//spec = conversion specifier.
