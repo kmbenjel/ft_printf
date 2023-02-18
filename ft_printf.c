@@ -6,12 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/17 10:59:52 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:48:18 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static int	isspec(char c)
+static int	ft_isspec(char c)
 {
 	if (ft_strchr("cspdiuxX%", c))
 		return (1);
@@ -24,9 +24,9 @@ static int	invalid_spec(char c)
 	char	*message;
 
 	message = "Error: Invalid conversion specifier : '";
-	ft_putstr_fd(message, 1);
-	ft_putchar_fd(c, 1);
-	ft_putstr_fd("'", 1);
+	ft_putstr(message, 1);
+	ft_putchar(c, 1);
+	ft_putstr("'", 1);
 }
 
 int	convert(char *spec)
@@ -51,6 +51,8 @@ int	ft_printf(const char *format, ...)
 			else
 				invalid_spec(*next);
 		}
+		else
+			ft_putchar(*i);
 		i++;
 	}
 	va_end(va_list ap);
