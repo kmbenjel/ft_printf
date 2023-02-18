@@ -6,12 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/18 09:48:18 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/18 09:50:14 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static int	ft_isspec(char c)
+int	ft_isspec(char c)
 {
 	if (ft_strchr("cspdiuxX%", c))
 		return (1);
@@ -19,7 +19,7 @@ static int	ft_isspec(char c)
 		return (0);
 }
 
-static int	invalid_spec(char c)
+int	ft_invalid_spec(char c)
 {
 	char	*message;
 
@@ -29,10 +29,11 @@ static int	invalid_spec(char c)
 	ft_putstr("'", 1);
 }
 
-int	convert(char *spec)
+int	ft_convert(char *spec)
 {
 	write(1, "a", 1);
 }
+
 int	ft_printf(const char *format, ...)
 {
 	char	*i;
@@ -47,9 +48,9 @@ int	ft_printf(const char *format, ...)
 		if (*i == '%')
 		{
 			if (isspec(*next))
-				convert(next);
+				ft_convert(next);
 			else
-				invalid_spec(*next);
+				ft_invalid_spec(*next);
 		}
 		else
 			ft_putchar(*i);
