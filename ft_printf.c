@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/18 11:56:15 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:03:20 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -29,9 +29,10 @@ int	ft_invalid_spec(char c)
 	ft_putstr("'");
 }
 
-int	ft_convert(char *spec)
+int	ft_convert(char spec)
 {
-	write(1, "a", 1);
+	if spec
+		== 'c' ft_print_character();
 }
 
 int	ft_printf(const char *format, ...)
