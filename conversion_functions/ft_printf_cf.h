@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:26:34 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 16:38:11 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:12:55 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_CF_H
 # include "../ft_printf.h"
 
-int	ft_print_character(void);
+int	ft_print_character(va_list ap);
 int	ft_print_decimal(void);
 int	ft_print_hexadecimal_lowercase(void);
 int	ft_print_hexadecimal_uppercase(void);
