@@ -1,4 +1,5 @@
-/* ************************************************************************** */
+,
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
@@ -11,7 +12,7 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static int	ft_isspec(char c)
+	static int ft_isspec(char c)
 {
 	if (ft_strchr("cspdiuxX%", c))
 		return (1);
@@ -28,10 +29,10 @@ static void	ft_invalid_spec(char c)
 	ft_putstr_fd("'", 1);
 }
 
-static int	ft_convert(char spec, int ol, void *ap)
+static int	ft_convert(char spec, int ol, void *arg)
 {
 	if (spec == 'c')
-		ol += ft_print_character(ap);
+		ol += ft_print_character();
 	if (spec == 's')
 		ft_print_string();
 	if (spec == 'p')
@@ -63,7 +64,7 @@ int	ft_printf(const char *format, ...)
 		if (*i == '%')
 		{
 			if (ft_isspec(*(i + 1)))
-				ft_convert(*(i + 1), ol, ap);
+				ft_convert(*(i + 1), ol, va_arg(ap, void *));
 			else
 				ft_invalid_spec(*(i + 1));
 		}
