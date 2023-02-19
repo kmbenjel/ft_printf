@@ -13,18 +13,26 @@
 NAME = libftprintf.a
 RM = rm -Rf
 CFLAGS = -Wall -Wextra -Werror -c
-AR = ar -rcs
-SRC = 	ft_atoi.c \
-		ft_itoa.c \
-		ft_putchar_fd.c \
-		ft_putnbr_fd.c \
-		ft_putstr_fd.c \
-		ft_strchr.c \
-		ft_strdup.c \
-		ft_strlen.c \
-		ft_strchr.c \
-		ft_tolower.c \
-		ft_toupper.c \
+AR = ar -rcsv
+SRC = 	ft_printf.c \
+		libft/ft_itoa.c \
+		libft/ft_putchar_fd.c \
+		libft/ft_putnbr_fd.c \
+		libft/ft_putstr_fd.c \
+		libft/ft_strchr.c \
+		libft/ft_strdup.c \
+		libft/ft_strlen.c \
+		libft/ft_strchr.c \
+		libft/ft_tolower.c \
+		libft/ft_toupper.c \
+		conversion_functions/ft_print_character.c \
+		conversion_functions/ft_print_decimal.c \
+		conversion_functions/ft_print_hexadecimal_lowercase.c \
+		conversion_functions/ft_print_hexadecimal_uppercase.c \
+		conversion_functions/ft_print_percent.c \
+		conversion_functions/ft_print_pointer.c \
+		conversion_functions/ft_print_string.c \
+		conversion_functions/ft_print_unsigned.c \
 
 
 OBJ = $(SRC:%.c=%.o)
@@ -40,7 +48,7 @@ bonus : $(OBJ_BONUS)
 	$(AR) $(NAME) $(OBJ_BONUS)
 
 clean :
-	$(RM) $(OBJ) 
+	$(RM) $(OBJ)
 	$(RM) $(OBJ_BONUS)
 
 fclean : clean

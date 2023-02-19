@@ -12,8 +12,8 @@
 
 NAME = libft.a
 RM = rm -Rf
-CFLAGS = -Wall -Wextra -Werror -c
-AR = ar -rcs
+CFLAGS = -Wall -Wextra -Werror
+AR = ar -rcv
 SRC = 	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -59,9 +59,9 @@ SRC_BONUS = ft_lstadd_back_bonus.c \
 		ft_lstsize_bonus.c \
 		ft_lstnew_bonus.c \
 
-OBJ = $(SRC:%.c=%.o)
+OBJ = $(SRC:.c=.o)
 
-OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all : $(NAME)
 
@@ -72,7 +72,7 @@ bonus : $(OBJ_BONUS)
 	$(AR) $(NAME) $(OBJ_BONUS)
 
 clean :
-	$(RM) $(OBJ) 
+	$(RM) $(OBJ)
 	$(RM) $(OBJ_BONUS)
 
 fclean : clean
