@@ -1,5 +1,4 @@
-,
-	/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
@@ -7,12 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 17:02:53 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:06:42 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-	static int ft_isspec(char c)
+static int	ft_isspec(char c)
 {
 	if (ft_strchr("cspdiuxX%", c))
 		return (1);
@@ -32,7 +31,7 @@ static void	ft_invalid_spec(char c)
 static int	ft_convert(char spec, int ol, void *arg)
 {
 	if (spec == 'c')
-		ol += ft_print_character();
+		ol += ft_print_character(arg);
 	if (spec == 's')
 		ft_print_string();
 	if (spec == 'p')
