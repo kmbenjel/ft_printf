@@ -6,12 +6,13 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 09:25:07 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 16:34:21 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 16:36:09 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# include "conversion_functions/ft_printf_cf.h"
 # include "libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
