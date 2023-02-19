@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:40:59 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 18:25:00 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:28:36 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_print_character(va_list ap)
 {
 	char	character;
 
-	character = va_arg(ap, char);
+	character = va_arg(ap, int);
 	ft_putchar_fd(character, 1);
 	return (1);
 }
