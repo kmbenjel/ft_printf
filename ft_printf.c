@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 18:52:50 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 19:02:48 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -52,6 +52,7 @@ int	ft_printf(const char *format, ...)
 				ol += ft_convert(*(i + 1), ol, ap);
 			else
 				ft_invalid_spec(*(i + 1));
+			i++;
 		}
 		else
 		{
