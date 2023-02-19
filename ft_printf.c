@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 18:50:35 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:52:50 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -45,6 +45,7 @@ int	ft_printf(const char *format, ...)
 	va_start(ap, format);
 	ol = 0;
 	while (*i)
+	{
 		if (*i == '%')
 		{
 			if (ft_isspec(*(i + 1)))
@@ -57,10 +58,10 @@ int	ft_printf(const char *format, ...)
 			ft_putchar_fd(*i, 1);
 			ol += 1;
 		}
-	i++;
-}
-va_end(ap);
-return (ol);
+		i++;
+	}
+	va_end(ap);
+	return (ol);
 }
 
 // i iterates on every character in the format.
