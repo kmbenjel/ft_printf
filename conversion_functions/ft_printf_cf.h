@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:26:34 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 15:33:12 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:34:35 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include "../printf.h"
 
-int ft_print_character int ft_print_decimal int ft_print_hexadecimal_lowercase int ft_print_hexadecimal_uppercase int ft_print_percent int ft_print_pointer int ft_print_string int ft_print_unsigned
+int	ft_print_character(void);
+int	ft_print_decimal(void);
+int	ft_print_hexadecimal_lowercase(void);
+int	ft_print_hexadecimal_uppercase(void);
+int	ft_print_percent(void);
+int	ft_print_pointer(void);
+int	ft_print_string(void);
+int	ft_print_unsigned(void);
 
 #endif
