@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/18 18:50:38 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 16:42:04 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -28,10 +28,10 @@ void	ft_invalid_spec(char c)
 	ft_putstr_fd("'", 1);
 }
 
-int	ft_convert(char spec)
+int	ft_convert(char spec, int ol)
 {
 	if (spec == 'c')
-		*ol += ft_print_character();
+		ol += ft_print_character();
 	if (spec == 's')
 		ft_print_string();
 	if (spec == 'p')
@@ -50,31 +50,32 @@ int	ft_convert(char spec)
 
 int	ft_printf(const char *format, ...)
 {
-	int		*ol;
+	int		ol;
 	char	*i;
 	char	*next;
 	va_list	ap;
 
 	i = (char *)format;
 	va_start(ap, format);
+	ol = 0;
 	while (*i)
 	{
 		next = i + 1;
 		if (*i == '%')
 		{
 			if (ft_isspec(*next))
-				ft_convert(*next);
+				ft_convert(*next, ol);
 			else
 				ft_invalid_spec(*next);
 		}
 		else
 		{
 			ft_putchar_fd(*i, 1);
-			*ol += 1;
+			ol += 1;
 		}
 	}
 	va_end(ap);
-	return (*ol);
+	return (ol);
 }
 
 // i iterates on every character in the format.
