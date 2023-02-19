@@ -6,19 +6,19 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 16:42:04 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/19 16:53:11 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_isspec(char c)
+static int	ft_isspec(char c)
 {
 	if (ft_strchr("cspdiuxX%", c))
 		return (1);
 	return (0);
 }
 
-void	ft_invalid_spec(char c)
+static void	ft_invalid_spec(char c)
 {
 	char	*message;
 
@@ -28,7 +28,7 @@ void	ft_invalid_spec(char c)
 	ft_putstr_fd("'", 1);
 }
 
-int	ft_convert(char spec, int ol)
+static int	ft_convert(char spec, int ol)
 {
 	if (spec == 'c')
 		ol += ft_print_character();
@@ -46,13 +46,13 @@ int	ft_convert(char spec, int ol)
 		ft_print_hexadecimal_uppercase();
 	if (spec == '%')
 		ft_print_percent();
+	return (ol);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	int		ol;
 	char	*i;
-	char	*next;
 	va_list	ap;
 
 	i = (char *)format;
@@ -60,13 +60,12 @@ int	ft_printf(const char *format, ...)
 	ol = 0;
 	while (*i)
 	{
-		next = i + 1;
 		if (*i == '%')
 		{
-			if (ft_isspec(*next))
-				ft_convert(*next, ol);
+			if (ft_isspec(*(i + 1)))
+				ft_convert(*(i + 1), ol);
 			else
-				ft_invalid_spec(*next);
+				ft_invalid_spec(*(i + 1));
 		}
 		else
 		{
