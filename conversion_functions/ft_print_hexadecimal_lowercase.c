@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 19:30:45 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:10:33 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -32,7 +32,7 @@ char	*ft_reverse_string(const char *str)
 //  so we will need to reverse that order,
 //  for that purpose FT_REVERSE_STRING is there.
 
-char	*ft_itoh(unsigned int intarg)
+char	*ft_uitoh(unsigned int uiarg)
 {
 	char	*hexstr;
 	int		remainder;
@@ -41,9 +41,9 @@ char	*ft_itoh(unsigned int intarg)
 	i = 0;
 	remainder = 0;
 	hexstr = malloc(9);
-	while (intarg != 0)
+	while (uiarg != 0)
 	{
-		remainder = intarg % 16;
+		remainder = uiarg % 16;
 		if (remainder < 10)
 			hexstr[i++] = remainder + '0';
 		else
@@ -54,20 +54,21 @@ char	*ft_itoh(unsigned int intarg)
 	return (ft_reverse_string(hexstr));
 }
 
-//  FT_ITOH stands for: Integer To Hexadecimal.
-//  INTARG stands for: Integer Argument.
+//  FT_UITOH stands for: Unsigned Integer To Hexadecimal.
+//  UIARG stands for: Unsigned Integer Argument.
 //  The previous functions are not static, as they will be also used for
 //  FT_PRINT_HEXDECIMAL_UPPERCASE.
-//  Allocated 9 bytes respecting the max hexadecimal lengths, plus the '\0'
+//  Allocated 9 bytes considering the max hexadecimal forms of unsigned
+//  ints, plus the '\0'
 
 int	ft_print_hexadecimal_lowercase(va_list ap)
 {
-	unsigned int	intarg;
+	unsigned int	uiarg;
 	int				count;
 	char			*hex;
 
-	intarg = va_arg(ap, unsigned int);
-	hex = ft_strjoin("0x", ft_itoh(intarg));
+	uiarg = va_arg(ap, unsigned int);
+	hex = ft_strjoin("0x", ft_itoh(uiarg));
 	ft_putstr_fd(hex, 1);
 	count = ft_strlen(hex);
 	return (count);
