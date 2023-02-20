@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:26:34 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 20:24:41 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:32:26 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int		ft_print_pointer(va_list ap);
 int		ft_print_string(va_list ap);
 int		ft_print_unsigned(va_list ap);
 char	*ft_reverse_string(const char *str);
-char	*ft_uitoh(int uiarg);
+char	*ft_uitoh(unsigned int uiarg);
 char	*ft_ultoh(unsigned long ularg);
 #endif
