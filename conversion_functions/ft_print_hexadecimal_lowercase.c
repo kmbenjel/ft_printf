@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 18:10:02 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:30:45 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -32,7 +32,7 @@ char	*ft_reverse_string(const char *str)
 //  so we will need to reverse that order,
 //  for that purpose FT_REVERSE_STRING is there.
 
-char	*ft_itoh(int intarg)
+char	*ft_itoh(unsigned int intarg)
 {
 	char	*hexstr;
 	int		remainder;
@@ -62,11 +62,11 @@ char	*ft_itoh(int intarg)
 
 int	ft_print_hexadecimal_lowercase(va_list ap)
 {
-	int		intarg;
-	int		count;
-	char	*hex;
+	unsigned int	intarg;
+	int				count;
+	char			*hex;
 
-	intarg = va_arg(ap, int);
+	intarg = va_arg(ap, unsigned int);
 	hex = ft_strjoin("0x", ft_itoh(intarg));
 	ft_putstr_fd(hex, 1);
 	count = ft_strlen(hex);
