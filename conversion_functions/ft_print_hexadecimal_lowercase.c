@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 11:46:53 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:50:52 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -14,12 +14,19 @@
 static char	*ft_reverse_string(const char *str)
 {
 	char	*result;
+	int		strlen;
 	int		i;
 
-	i = 0;
+	strlen = ft_strlen(str);
+	i = -1;
 	result = malloc(ft_strlen(str) + 1);
 	if (!result)
 		return (NULL);
+	while (i++ < ft_strlen(str))
+	{
+		result[i] = str[ft]
+	}
+	return (result);
 }
 
 // Digits for the hexadecimal representation will be collected from the rigth to
