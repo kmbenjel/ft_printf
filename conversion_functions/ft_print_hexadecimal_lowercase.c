@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 16:23:37 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:29:16 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -51,7 +51,7 @@ char	*ft_itoh(int intarg)
 		intarg /= 16;
 	}
 	hexstr[i] = '\0';
-	return (hexstr);
+	return (ft_reverse_string(hexstr));
 }
 
 //  FT_ITOH stands for: Integer To Hexadecimal.
@@ -63,9 +63,12 @@ char	*ft_itoh(int intarg)
 int	ft_print_hexadecimal_lowercase(va_list ap)
 {
 	int		intarg;
+	int		count;
 	char	*hex;
 
 	intarg = va_arg(ap, int);
 	hex = ft_strjoin("0x", ft_itoh(intarg));
-	return (hex);
+	ft_putstr_fd(hex, 1);
+	count = ft_strlen(hex);
+	return (count);
 }
