@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 18:12:22 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 18:21:21 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -30,22 +30,22 @@ static void	ft_invalid_spec(char c)
 
 static int	ft_convert(char spec, int ol, va_list ap)
 {
-	if (spec == 'c')
-		ol += ft_print_character(ap);
-	if (spec == 's')
-		ft_print_string(ap);
+	/* if (spec == 'c') */
+	/* 	ol += ft_print_character(ap); */
+	/* if (spec == 's') */
+	/* 	ft_print_string(ap); */
 	if (spec == 'p')
 		ft_print_pointer(ap);
-	if (spec == 'd' || spec == 'i')
-		ft_print_decimal(ap);
-	if (spec == 'u')
-		ft_print_unsigned(ap);
-	if (spec == 'x')
-		ft_print_hexadecimal_lowercase(ap);
-	if (spec == 'X')
-		ft_print_hexadecimal_uppercase(ap);
-	if (spec == '%')
-		ft_print_percent(ap);
+	/* if (spec == 'd' || spec == 'i') */
+	/* 	ft_print_decimal(ap); */
+	/* if (spec == 'u') */
+	/* 	ft_print_unsigned(ap); */
+	/* if (spec == 'x') */
+	/* 	ft_print_hexadecimal_lowercase(ap); */
+	/* if (spec == 'X') */
+	/* 	ft_print_hexadecimal_uppercase(ap); */
+	/* if (spec == '%') */
+	/* 	ft_print_percent(ap); */
 	return (ol);
 }
 
