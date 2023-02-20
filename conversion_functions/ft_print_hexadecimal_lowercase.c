@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 11:50:52 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:56:36 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -19,13 +19,11 @@ static char	*ft_reverse_string(const char *str)
 
 	strlen = ft_strlen(str);
 	i = -1;
-	result = malloc(ft_strlen(str) + 1);
+	result = malloc(strlen + 1);
 	if (!result)
 		return (NULL);
-	while (i++ < ft_strlen(str))
-	{
-		result[i] = str[ft]
-	}
+	while (i++ <= strlen)
+		result[i] = str[strlen - i - 1];
 	return (result);
 }
 
