@@ -6,12 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 20:17:43 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:25:31 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
 
-char	*ft_ultoh(unsigned long ularg)
+static char	*ft_ultoh(unsigned long ularg)
 {
 	char	*hexstr;
 	int		remainder;
