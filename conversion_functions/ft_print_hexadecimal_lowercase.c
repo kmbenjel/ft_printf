@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 16:10:13 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:23:37 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -36,7 +36,9 @@ char	*ft_itoh(int intarg)
 {
 	char	*hexstr;
 	int		remainder;
+	int		i;
 
+	i = 0;
 	remainder = 0;
 	hexstr = malloc(9);
 	while (intarg != 0)
