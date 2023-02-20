@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/19 19:02:48 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 06:41:02 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -32,6 +32,20 @@ static int	ft_convert(char spec, int ol, va_list ap)
 {
 	if (spec == 'c')
 		ol += ft_print_character(ap);
+	if (spec == 's')
+		ft_print_string();
+	if (spec == 'p')
+		ft_print_pointer();
+	if (spec == 'd' || spec == 'i')
+		ft_print_decimal();
+	if (spec == 'u')
+		ft_print_unsigned();
+	if (spec == 'x')
+		ft_print_hexadecimal_lowercase();
+	if (spec == 'X')
+		ft_print_hexadecimal_uppercase();
+	if (spec == '%')
+		ft_print_percent();
 	return (ol);
 }
 
@@ -68,19 +82,3 @@ int	ft_printf(const char *format, ...)
 // i iterates on every character in the format.
 // ap stands for: Argument Pointer.
 // ol stands for: Output Length.
-/*
-
-	if (spec == 's')
-		ft_print_string();
-	if (spec == 'p')
-		ft_print_pointer();
-	if (spec == 'd' || spec == 'i')
-		ft_print_decimal();
-	if (spec == 'u')
-		ft_print_unsigned();
-	if (spec == 'x')
-		ft_print_hexadecimal_lowercase();
-	if (spec == 'X')
-		ft_print_hexadecimal_uppercase();
-	if (spec == '%')
-		ft_print_percent(); */
