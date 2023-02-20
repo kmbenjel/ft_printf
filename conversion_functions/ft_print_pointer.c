@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 20:25:31 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:38:05 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -27,7 +27,7 @@ static char	*ft_ultoh(unsigned long ularg)
 			hexstr[i++] = remainder + '0';
 		else
 			hexstr[i++] = remainder + 'A' - 10;
-		intarg /= 16;
+		ularg /= 16;
 	}
 	hexstr[i] = '\0';
 	return (ft_reverse_string(hexstr));
@@ -47,6 +47,7 @@ int	ft_print_pointer(va_list ap)
 	ularg = va_arg(ap, unsigned long);
 	hex = ft_strjoin("0x", ft_ultoh(ularg));
 	ft_putstr_fd(hex, 1);
+	free(hex);
 	count = ft_strlen(hex);
 	return (count);
 }
