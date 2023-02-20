@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 12:20:49 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:27:32 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -43,7 +43,13 @@ char	*ft_itoh(int intarg)
 	{
 		remainder = intarg % 16;
 		if (remainder < 10)
+			hexstr[i++] = remainder + '0';
+		else
+			hexstr[i++] = remainder + 'A' - 10;
+		intarg /= 16;
 	}
+	hexstr[i] = '\0';
+	return (hexstr);
 }
 
 //  FT_ITOH stands for: Integer To Hexadecimal.
