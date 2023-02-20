@@ -6,12 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 11:56:36 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:20:49 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
 
-static char	*ft_reverse_string(const char *str)
+char	*ft_reverse_string(const char *str)
 {
 	char	*result;
 	int		strlen;
@@ -27,10 +27,30 @@ static char	*ft_reverse_string(const char *str)
 	return (result);
 }
 
-// Digits for the hexadecimal representation will be collected from the rigth to
-// the left using the remainders of the division by 16,
-//	so we will need to reverse that order,
-//	for that purpose FT_REVERSE_STRING is there.
+//  Digits for the hexadecimal representation will be collected from the right
+//  to the left using the remainders of the division by 16,
+//  so we will need to reverse that order,
+//  for that purpose FT_REVERSE_STRING is there.
+
+char	*ft_itoh(int intarg)
+{
+	char	*hexstr;
+	int		remainder;
+
+	remainder = 0;
+	hexstr = malloc(9);
+	while (intarg != 0)
+	{
+		remainder = intarg % 16;
+		if (remainder < 10)
+	}
+}
+
+//  FT_ITOH stands for: Integer To Hexadecimal.
+//  INTARG stands for: Integer Argument.
+//  The previous functions are not static, as they will be also used for
+//  FT_PRINT_HEXDECIMAL_UPPERCASE.
+//  Allocated 9 bytes respecting the max hexadecimal lengths, plus the '\0'
 
 int	ft_print_hexadecimal_lowercase(va_list ap)
 {
