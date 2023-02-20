@@ -6,7 +6,12 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 16:51:40 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 17:02:56 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
+
+int	ft_print_pointer(va_list ap)
+{
+	int	count;
+}
