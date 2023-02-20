@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:26:34 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 06:37:21 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:18:04 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <stdarg.h>
 
 int	ft_print_character(va_list ap);
-int	ft_print_decimal(void);
-int	ft_print_hexadecimal_lowercase(void);
-int	ft_print_hexadecimal_uppercase(void);
-int	ft_print_percent(void);
-int	ft_print_pointer(void);
-int	ft_print_string(void);
-int	ft_print_unsigned(void);
+int	ft_print_decimal(va_list ap);
+int	ft_print_hexadecimal_lowercase(va_list ap);
+int	ft_print_hexadecimal_uppercase(va_list ap);
+int	ft_print_percent(va_list ap);
+int	ft_print_pointer(va_list ap);
+int	ft_print_string(va_list ap);
+int	ft_print_unsigned(va_list ap);
 
 #endif

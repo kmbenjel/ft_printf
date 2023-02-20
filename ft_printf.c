@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 06:41:02 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:19:23 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -33,19 +33,19 @@ static int	ft_convert(char spec, int ol, va_list ap)
 	if (spec == 'c')
 		ol += ft_print_character(ap);
 	if (spec == 's')
-		ft_print_string();
+		ft_print_string(ap);
 	if (spec == 'p')
-		ft_print_pointer();
+		ft_print_pointer(ap);
 	if (spec == 'd' || spec == 'i')
-		ft_print_decimal();
+		ft_print_decimal(ap);
 	if (spec == 'u')
-		ft_print_unsigned();
+		ft_print_unsigned(ap);
 	if (spec == 'x')
-		ft_print_hexadecimal_lowercase();
+		ft_print_hexadecimal_lowercase(ap);
 	if (spec == 'X')
-		ft_print_hexadecimal_uppercase();
+		ft_print_hexadecimal_uppercase(ap);
 	if (spec == '%')
-		ft_print_percent();
+		ft_print_percent(ap);
 	return (ol);
 }
 
