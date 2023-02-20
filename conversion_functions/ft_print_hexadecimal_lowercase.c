@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 20:18:59 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:35:09 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -48,7 +48,7 @@ char	*ft_uitoh(unsigned int uiarg)
 			hexstr[i++] = remainder + '0';
 		else
 			hexstr[i++] = remainder + 'A' - 10;
-		intarg /= 16;
+		uiarg /= 16;
 	}
 	hexstr[i] = '\0';
 	return (ft_reverse_string(hexstr));
