@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:06 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 06:36:40 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:56:56 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,4 @@ int	ft_print_decimal(va_list ap)
 	return (ft_strlen(decimal));
 }
 
-//  decimal is a string holding an integer (base 10).
+//  The DECIMAL variable is a string holding an integer (base 10).
