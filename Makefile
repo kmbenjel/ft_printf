@@ -6,12 +6,12 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/21 17:44:38 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/21 17:49:53 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-#RM = rm -Rf
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar -r
 SRC = 	ft_printf.c \
@@ -38,16 +38,18 @@ OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
+$(OBJ):$(SRC)
+	@	$(CC) $(CFLAGS) -c $(SRC)
 $(NAME) : $(OBJ)
 	@	$(AR) $(NAME) $(OBJ)
-	@	echo "\033[32m make: OK. \033[0mi"
+	@	echo "\033[32m make: OK. \033[0m"
 
 clean :
-	$(RM) $(OBJ)
+	@	$(RM) $(OBJ)
 	@	echo "\033[32m clean: OK. \033[0m"
 
 fclean : clean
-	$(RM) $(NAME)
+	@	$(RM) $(NAME)
 	@	echo "\033[32m fclean: OK. \033[0m"
 
 re : fclean $(NAME)
