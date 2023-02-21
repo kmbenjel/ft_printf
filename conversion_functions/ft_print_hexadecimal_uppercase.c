@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:22 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 20:12:16 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:52:32 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -18,7 +18,8 @@ int	ft_print_hexadecimal_uppercase(va_list ap)
 	char	*hex;
 
 	uiarg = va_arg(ap, int);
-	hex = ft_strjoin("0X", ft_uitoh(uiarg));
+	hex = ft_uitoh(uiarg);
+	hex = ft_strjoin("0X", ft_toupper(hex));
 	ft_putstr_fd(hex, 1);
 	count = ft_strlen(hex);
 	return (count);
