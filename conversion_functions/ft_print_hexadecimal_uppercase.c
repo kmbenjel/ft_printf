@@ -6,10 +6,19 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:22 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/21 20:52:32 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:03:12 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
+
+static void	ft_strupcase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		str[i] = ft_toupper(str[i]);
+}
 
 int	ft_print_hexadecimal_uppercase(va_list ap)
 {
