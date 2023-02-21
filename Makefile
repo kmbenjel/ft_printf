@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/21 23:01:52 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/21 23:36:46 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC = 	ft_printf.c \
 		libft/ft_putchar_fd.c \
 		libft/ft_putstr_fd.c \
 		libft/ft_strlen.c \
+		libft/ft_strnstr.c \
 		libft/ft_toupper.c \
 		libft/ft_strchr.c \
 		libft/ft_strjoin.c \
