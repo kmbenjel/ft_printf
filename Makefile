@@ -6,12 +6,12 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/20 16:23:00 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/21 17:03:28 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-RM = rm -Rf
+#RM = rm -Rf
 CFLAGS = -Wall -Wextra -Werror
 AR = ar -r
 SRC = 	ft_printf.c \
@@ -34,24 +34,18 @@ SRC = 	ft_printf.c \
 		conversion_functions/ft_print_string.c \
 		conversion_functions/ft_print_unsigned.c \
 
-
-OBJ = $(SRC:%.c=%.o)
-
-OBJ_BONUS = $(SRC_BONUS:%.c=%.o)
+OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	$(AR) $(NAME) $(OBJ)
-
-bonus : $(OBJ_BONUS)
-	$(AR) $(NAME) $(OBJ_BONUS)
+	make clean
 
 clean :
 	$(RM) $(OBJ)
-	$(RM) $(OBJ_BONUS)
 
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean all bonus
+re : fclean $(NAME)
