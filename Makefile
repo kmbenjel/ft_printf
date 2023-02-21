@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/21 17:49:53 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/21 17:53:50 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ OBJ = $(SRC:.c=.o)
 all : $(NAME)
 
 $(OBJ):$(SRC)
-	@	$(CC) $(CFLAGS) -c $(SRC)
+	@	$(CC) $(CFLAGS) -c $< -o $@
+
 $(NAME) : $(OBJ)
 	@	$(AR) $(NAME) $(OBJ)
 	@	echo "\033[32m make: OK. \033[0m"
