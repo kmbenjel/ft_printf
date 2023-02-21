@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:46 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/21 16:18:24 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:21:25 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_print_unsigned(va_list ap)
 	count = 0;
 	uiarg = va_arg(ap, unsigned int);
 	uistr = ft_uitoa(uiarg);
-	count = ft_strlen(uiarg);
+	count = ft_strlen(uistr);
 	return (count);
 }
 
