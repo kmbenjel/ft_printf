@@ -6,14 +6,14 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/21 18:01:27 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/21 18:06:56 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar -r
+AR = ar -rc
 SRC = 	ft_printf.c \
 		libft/ft_itoa.c \
 		libft/ft_putchar_fd.c \
