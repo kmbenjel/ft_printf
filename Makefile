@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/21 17:16:54 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/21 17:24:32 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,10 +39,9 @@ OBJ = $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	@	echo -e "\033[32m Make done, Clean done. \033[0m"
 	@	$(AR) $(NAME) $(OBJ)
 	make clean
-
+@	echo "\033[32m <message> \u2705 \033[0m"
 clean :
 	$(RM) $(OBJ)
 
