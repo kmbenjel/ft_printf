@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/21 23:11:20 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/21 23:16:02 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -22,7 +22,7 @@ static void	ft_invalid_spec(char c)
 {
 	char	*message;
 
-	message = "Error: Invalid conversion specifier : '";
+	message = "Error: Invalid conversion specifier : \'";
 	ft_putstr_fd(message, 1);
 	ft_putchar_fd(c, 1);
 	ft_putchar_fd('\'', 1);
