@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/21 18:08:08 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/21 20:38:18 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@	$(AR) $(NAME) $(OBJ)
 	@	echo "\033[32m make: OK \033[0m"
+	@	make clean
 
 clean:
 	@	$(RM) $(OBJ)
