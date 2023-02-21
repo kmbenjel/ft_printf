@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:46 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/21 16:11:58 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:18:24 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,15 @@ int	ft_print_unsigned(va_list ap)
 {
 	int				count;
 	unsigned int	uiarg;
+	char			*uistr;
 
 	count = 0;
 	uiarg = va_arg(ap, unsigned int);
+	uistr = ft_uitoa(uiarg);
 	count = ft_strlen(uiarg);
+	return (count);
 }
 
 //  UITOA stands for: Unsigned Integer to ASCII.
 //  UIARG stands for: Unsigned Integer Argument.
+//  UISTR stands for: Unsigned Integer String (A char* representing an unsigned int).

@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 20:35:09 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:14:33 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -65,11 +65,13 @@ int	ft_print_hexadecimal_lowercase(va_list ap)
 {
 	unsigned int	uiarg;
 	int				count;
-	char			*hex;
+	char			*hexstr;
 
 	uiarg = va_arg(ap, unsigned int);
-	hex = ft_strjoin("0x", ft_uitoh(uiarg));
-	ft_putstr_fd(hex, 1);
-	count = ft_strlen(hex);
+	hexstr = ft_strjoin("0x", ft_uitoh(uiarg));
+	ft_putstr_fd(hexstr, 1);
+	count = ft_strlen(hexstr);
 	return (count);
 }
+
+// HEXSTR stands for: Hexadecimal String (A hexadecimal in char * format).
