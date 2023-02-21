@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 20:43:05 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/21 23:06:25 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -26,7 +26,7 @@ static char	*ft_ultoh(unsigned long ularg)
 		if (remainder < 10)
 			hexstr[i++] = remainder + '0';
 		else
-			hexstr[i++] = remainder + 'A' - 10;
+			hexstr[i++] = remainder + 'a' - 10;
 		ularg /= 16;
 	}
 	hexstr[i] = '\0';
