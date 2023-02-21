@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/21 21:07:47 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/21 21:10:58 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,4 +50,4 @@ fclean: clean
 re: fclean $(NAME)
 
 .PHONY: all clean fclean re
-.SILENT: %.o
+
