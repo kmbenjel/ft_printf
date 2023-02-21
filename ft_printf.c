@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/21 23:25:24 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/21 23:40:34 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -25,27 +25,27 @@ static void	ft_invalid_spec(char c)
 
 	message = "Error: Invalid conversion specifier: '";
 	ft_putstr_fd(message, 1);
-	ft_putchar_fd('\'', 1);
 	ft_putchar_fd(c, 1);
+	ft_putchar_fd('\'', 1);
 }
 
 static int	ft_convert(char spec, int ol, va_list ap)
 {
 	if (spec == 'c')
 		ol += ft_print_character(ap);
-	if (spec == 's')
+	else if (spec == 's')
 		ol += ft_print_string(ap);
-	if (spec == 'p')
+	else if (spec == 'p')
 		ol += ft_print_pointer(ap);
-	if (spec == 'd' || spec == 'i')
+	else if (spec == 'd' || spec == 'i')
 		ol += ft_print_decimal(ap);
-	if (spec == 'u')
+	else if (spec == 'u')
 		ol += ft_print_unsigned(ap);
-	if (spec == 'x')
+	else if (spec == 'x')
 		ol += ft_print_hexadecimal_lowercase(ap);
-	if (spec == 'X')
+	else if (spec == 'X')
 		ol += ft_print_hexadecimal_uppercase(ap);
-	if (spec == '%')
+	else
 		ol += ft_print_percent(ap);
 	return (ol);
 }
