@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 15:37:32 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:41:53 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -48,7 +48,7 @@ static int	ft_convert(char spec, int ol, va_list ap)
 	else if (spec == 'X')
 		ol += ft_print_hexadecimal_uppercase(ap);
 	else
-		ol += ft_print_percent(ap);
+		ol += ft_print_percent();
 	return (ol);
 }
 
@@ -67,7 +67,6 @@ int	ft_printf(const char *format, ...)
 		{
 			if (ft_isspec(*(i + 1)))
 				ol += ft_convert(*(i + 1), ol, ap);
-			i++;
 		}
 		else
 		{
