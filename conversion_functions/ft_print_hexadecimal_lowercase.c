@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 20:31:27 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 23:21:21 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -47,7 +47,7 @@ char	*ft_uitoh(unsigned int uiarg)
 	remainder = 0;
 	hexstr = malloc(9);
 	if (!hexstr)
-		NULL;
+		return (NULL);
 	free_helper = hexstr;
 	while (uiarg != 0)
 	{
@@ -78,7 +78,7 @@ int	ft_print_hexadecimal_lowercase(va_list ap)
 	char			*hexstr;
 
 	uiarg = va_arg(ap, unsigned int);
-	hexstr = ft_strjoin("0x", ft_uitoh(uiarg));
+	hexstr = ft_uitoh(uiarg);
 	ft_putstr_fd(hexstr, 1);
 	count = ft_strlen(hexstr);
 	free(hexstr);
