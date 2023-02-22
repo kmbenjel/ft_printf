@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 17:22:54 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:26:19 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -57,7 +57,9 @@ char	*ft_uitoh(unsigned int uiarg)
 		uiarg /= 16;
 	}
 	hexstr[i] = '\0';
-	return (ft_reverse_string(hexstr));
+	hexstr = ft_reverse_string(hexstr);
+	free(free_helper);
+	return (hexstr);
 }
 
 //  FT_UITOH stands for: Unsigned Integer To Hexadecimal.

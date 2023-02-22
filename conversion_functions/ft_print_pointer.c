@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/21 23:06:25 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:29:03 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -14,9 +14,11 @@
 static char	*ft_ultoh(unsigned long ularg)
 {
 	char	*hexstr;
+	char	*free_helper;
 	int		remainder;
 	int		i;
 
+	free_helper = hexstr;
 	i = 0;
 	remainder = 0;
 	hexstr = malloc(17);
