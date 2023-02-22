@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 18:06:14 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:14:34 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -31,28 +31,24 @@ static int	ft_isspec(char c)
 /* 	return (0); */
 /* } */
 
-static int	ft_convert(char spec, int ol, va_list ap)
+static int	ft_convert(char spec, va_list ap)
 {
-	int	i;
-
-	i = 0;
 	if (spec == 'c')
-		ol = ft_print_character(ap);
+		return (ft_print_character(ap));
 	else if (spec == 's')
-		i += ft_print_string(ap);
+		return (ft_print_string(ap));
 	else if (spec == 'p')
-		ol += ft_print_pointer(ap);
+		return (ft_print_pointer(ap));
 	else if (spec == 'd' || spec == 'i')
-		ol += ft_print_decimal(ap);
+		return (ft_print_decimal(ap));
 	else if (spec == 'u')
-		ol += ft_print_unsigned(ap);
+		return (ft_print_unsigned(ap));
 	else if (spec == 'x')
-		ol += ft_print_hexadecimal_lowercase(ap);
+		return (ft_print_hexadecimal_lowercase(ap));
 	else if (spec == 'X')
-		ol += ft_print_hexadecimal_uppercase(ap);
+		return (ft_print_hexadecimal_uppercase(ap));
 	else
-		ol += ft_print_percent();
-	return (i);
+		return (ft_print_percent());
 }
 
 int	ft_printf(const char *format, ...)
@@ -69,7 +65,7 @@ int	ft_printf(const char *format, ...)
 		if (*i == '%')
 		{
 			if (ft_isspec(*(i + 1)))
-				ol += ft_convert(*(i + 1), ol, ap);
+				ol += ft_convert(*(i + 1), ap);
 			i++;
 		}
 		else
