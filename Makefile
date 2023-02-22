@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/22 12:05:44 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/22 13:49:41 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c
+$(OBJ): $(SRC)
 	@	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
@@ -54,4 +54,4 @@ fclean: clean
 re: fclean
 	@	make
 
-.PHONY: all clean fclean re
+.PHONY: all re clean fclean
