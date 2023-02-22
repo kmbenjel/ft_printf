@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 12:14:26 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:45:21 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -64,6 +64,7 @@ int	ft_printf(const char *format, ...)
 	ol = 0;
 	while (*i++)
 	{
+		ft_printf("%c\n", i[0]);
 		if (*(i + 1) == '%')
 		{
 			if (ft_isspec(*(i + 1)))
