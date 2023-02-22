@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:46 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 17:33:36 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:37:23 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static char	*ft_uitoa(unsigned int uiarg)
 	int		remainder;
 	int		i;
 
-	free_helper = str;
 	remainder = 0;
 	i = 0;
 	str = malloc(9);
 	if (!str)
 		return (NULL);
+	free_helper = str;
 	while (uiarg)
 	{
 		remainder = uiarg % 10;
