@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 18:14:34 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/23 00:04:26 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -17,19 +17,6 @@ static int	ft_isspec(char c)
 		return (1);
 	return (0);
 }
-
-/* static int	ft_invalid_spec(char c) */
-/* { */
-/* 	char	*message; */
-
-/* 	message = "Error: Invalid conversion specifier: '"; */
-
-/*     if */
-/* 	ft_putstr_fd(message, 1); */
-/* 	ft_putchar_fd(c, 1); */
-/* 	ft_putchar_fd('\'', 1); */
-/* 	return (0); */
-/* } */
 
 static int	ft_convert(char spec, va_list ap)
 {
