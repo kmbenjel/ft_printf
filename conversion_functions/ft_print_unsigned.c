@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:46 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 14:18:13 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:33:36 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 static char	*ft_uitoa(unsigned int uiarg)
 {
 	char	*str;
+	char	*free_helper;
 	int		remainder;
 	int		i;
 
+	free_helper = str;
 	remainder = 0;
 	i = 0;
 	str = malloc(9);
@@ -30,7 +32,9 @@ static char	*ft_uitoa(unsigned int uiarg)
 		uiarg /= 10;
 	}
 	str[i] = '\0';
-	return (ft_reverse_string(str));
+	str = ft_reverse_string(str);
+	free(free_helper);
+	return (str);
 }
 
 int	ft_print_unsigned(va_list ap)
@@ -43,6 +47,7 @@ int	ft_print_unsigned(va_list ap)
 	uiarg = va_arg(ap, unsigned int);
 	uistr = ft_uitoa(uiarg);
 	count = ft_strlen(uistr);
+	free(uistr);
 	return (count);
 }
 
