@@ -6,14 +6,14 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 15:48:39 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:58:15 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
 static int	ft_isspec(char c)
 {
-	if (ft_strchr("cspdiuxX%", c))
+	if (c && ft_strchr("cspdiuxX%", c))
 		return (1);
 	return (0);
 }
