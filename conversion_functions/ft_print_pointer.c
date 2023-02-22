@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:41 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 22:48:21 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:54:31 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -53,14 +53,17 @@ int	ft_print_pointer(va_list ap)
 
 	ularg = va_arg(ap, unsigned long);
 	ultoh = ft_ultoh(ularg);
-	if (ultoh)
+	if (ularg)
 		hex = ft_strjoin("0x", ultoh);
 	else
 		hex = "0x0";
 	ft_putstr_fd(hex, 1);
 	count = ft_strlen(hex);
-	free(ultoh);
-	free(hex);
+	if (ularg)
+	{
+		free(ultoh);
+		free(hex);
+	}
 	return (count);
 }
 
