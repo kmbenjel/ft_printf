@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:46 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/21 16:26:01 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:34:16 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static char	*ft_uitoa(unsigned int uiarg)
 	str[i] = '\0';
 	return (ft_reverse_string(str));
 }
+
 int	ft_print_unsigned(va_list ap)
 {
 	int				count;
