@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/23 00:36:16 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/23 00:47:13 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -18,6 +18,12 @@ static int	ft_isspec(char c)
 	return (0);
 }
 
+int	ft_isascii(int c)
+{
+	if (c <= 127 && c >= 0)
+		return (1);
+	return (0);
+}
 static int	ft_convert(char spec, va_list ap)
 {
 	if (spec == 'c')
