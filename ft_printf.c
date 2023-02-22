@@ -6,10 +6,11 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 13:43:57 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 14:22:00 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
+#include "ft_printf_cf.h"
 
 static int	ft_isspec(char c)
 {

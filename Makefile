@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/22 14:14:36 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/22 14:16:27 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(NAME): $(OBJ)
 $(OBJ): $(SRC)
 	@	$(CC) $(CFLAGS) -c $< -o $@
 
-clean: $(OBJ)
+clean:
 	@	$(RM) $(OBJ)
 	@	echo "\033[32m clean: OK \033[0m"
 
