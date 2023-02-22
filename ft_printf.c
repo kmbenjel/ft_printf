@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/23 00:47:13 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/23 00:56:18 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -18,12 +18,6 @@ static int	ft_isspec(char c)
 	return (0);
 }
 
-int	ft_isascii(int c)
-{
-	if (c <= 127 && c >= 0)
-		return (1);
-	return (0);
-}
 static int	ft_convert(char spec, va_list ap)
 {
 	if (spec == 'c')
@@ -42,6 +36,17 @@ static int	ft_convert(char spec, va_list ap)
 		return (ft_print_hexadecimal_uppercase(ap));
 	else
 		return (ft_print_percent());
+}
+
+static int	ft_any_errors(const char *format, int ol)
+{
+	int	i;
+
+	i = 0;
+	while (format[i])
+		if (!ft_isascii(format[i]))
+			return (-1);
+	return (ol);
 }
 
 int	ft_printf(const char *format, ...)
@@ -69,8 +74,7 @@ int	ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
-	ol = 0;
-	return (ol);
+	return (ft_any_errors(format, ol));
 }
 
 // i iterates on every character in the format.
