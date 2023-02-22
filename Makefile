@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/22 14:03:24 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/22 14:10:11 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ $(NAME): $(OBJ)
 	@	$(AR) $(NAME) $(OBJ)
 	@	echo "\033[32m make: OK \033[0m"
 
-clean: $(OBJ)
+clean:
 	@	$(RM) $(OBJ)
 	@	echo "\033[32m clean: OK \033[0m"
 
@@ -51,7 +51,6 @@ fclean: clean
 	@	$(RM) $(NAME)
 	@	echo "\033[32m fclean: OK \033[0m"
 
-re: fclean
-	@	make
+re: fclean all
 
-.PHONY: all re clean fclean
+.PHONY: clean fclean re all
