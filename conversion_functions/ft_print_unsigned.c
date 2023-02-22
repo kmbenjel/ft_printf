@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:46 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 23:49:55 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 23:53:56 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ static char	*ft_uitoa(unsigned int uiarg)
 	remainder = 0;
 	i = 0;
 	str = malloc(9);
-	if (!str)
-		return (NULL);
 	free_helper = str;
 	if (!uiarg)
 		str[i++] = '0';
@@ -48,6 +46,7 @@ int	ft_print_unsigned(va_list ap)
 	count = 0;
 	uiarg = va_arg(ap, unsigned int);
 	uistr = ft_uitoa(uiarg);
+	ft_putstr_fd(uistr, 1);
 	count = ft_strlen(uistr);
 	free(uistr);
 	return (count);
