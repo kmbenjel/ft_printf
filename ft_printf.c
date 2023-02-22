@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 12:50:35 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:53:14 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -68,7 +68,10 @@ int	ft_printf(const char *format, ...)
 		if (*i == '%')
 		{
 			if (ft_isspec(*(i + 1)))
+			{
 				ol += ft_convert(*(i + 1), ol, ap);
+				i++;
+			}
 		}
 		else
 		{
