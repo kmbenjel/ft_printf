@@ -6,19 +6,20 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:46 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 13:34:16 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:37:38 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_cf.h"
 
 static char	*ft_uitoa(unsigned int uiarg)
-
 {
-	char *str;
-	int remainder = 0;
-	int i = 0;
+	char	*str;
+	int		remainder;
+	int		i;
 
+	remainder = 0;
+	i = 0;
 	str = malloc(9);
 	if (!str)
 		return (NULL);
@@ -47,4 +48,4 @@ int	ft_print_unsigned(va_list ap)
 
 //  UITOA stands for: Unsigned Integer to ASCII.
 //  UIARG stands for: Unsigned Integer Argument.
-//  UISTR stands for: Unsigned Integer String (A char* representing an unsigned int).
+//  UISTR stands for: Unsigned Integer String.
