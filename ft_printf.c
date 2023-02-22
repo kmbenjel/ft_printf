@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 16:47:45 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:51:25 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -72,7 +72,8 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ol += ft_print_character(*i);
+			ft_putchar_fd(*i, 1);
+			ol++;
 		}
 		i++;
 	}
