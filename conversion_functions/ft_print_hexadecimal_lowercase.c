@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 20:23:31 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 20:31:27 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -46,6 +46,8 @@ char	*ft_uitoh(unsigned int uiarg)
 	i = 0;
 	remainder = 0;
 	hexstr = malloc(9);
+	if (!hexstr)
+		NULL;
 	free_helper = hexstr;
 	while (uiarg != 0)
 	{
