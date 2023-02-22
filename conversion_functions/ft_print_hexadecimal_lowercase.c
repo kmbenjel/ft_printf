@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:12 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/22 13:33:45 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:22:54 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf_cf.h"
@@ -39,9 +39,11 @@ char	*ft_reverse_string(const char *str)
 char	*ft_uitoh(unsigned int uiarg)
 {
 	char	*hexstr;
+	char	*free_helper;
 	int		remainder;
 	int		i;
 
+	free_helper = hexstr;
 	i = 0;
 	remainder = 0;
 	hexstr = malloc(9);
@@ -75,6 +77,7 @@ int	ft_print_hexadecimal_lowercase(va_list ap)
 	hexstr = ft_strjoin("0x", ft_uitoh(uiarg));
 	ft_putstr_fd(hexstr, 1);
 	count = ft_strlen(hexstr);
+	free(hexstr);
 	return (count);
 }
 
