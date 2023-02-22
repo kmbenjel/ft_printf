@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 13:41:06 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/20 16:27:24 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:14:25 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_print_decimal(va_list ap)
 	char	*decimal;
 	int		count;
 
-	count = ft_strlen(decimal);
 	decimal = ft_itoa(va_arg(ap, int));
+	count = ft_strlen(decimal);
 	ft_putstr_fd(decimal, 1);
 	return (count);
 }
