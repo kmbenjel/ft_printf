@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/23 01:13:37 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/23 01:19:02 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -38,20 +38,6 @@ static int	ft_convert(char spec, va_list ap)
 		return (ft_print_percent());
 }
 
-static int	ft_any_errors(const char *format, int ol)
-{
-	int	i;
-
-	i = 0;
-	while (format[i])
-	{
-		if (format[i] == '\\' && format[i + 1])
-			return (-1);
-		i++;
-	}
-	return (ol);
-}
-
 int	ft_printf(const char *format, ...)
 {
 	int		ol;
@@ -77,7 +63,7 @@ int	ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
-	return (ft_any_errors(format, ol));
+	return (ol);
 }
 
 // i iterates on every character in the format.
