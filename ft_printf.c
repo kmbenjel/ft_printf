@@ -6,7 +6,7 @@
 /*   By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 00:48:45 by kbenjell          #+#    #+#             */
-/*   Updated: 2023/02/23 01:06:48 by kbenjell         ###   ########.fr       */
+/*   Updated: 2023/02/23 01:13:37 by kbenjell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -45,7 +45,7 @@ static int	ft_any_errors(const char *format, int ol)
 	i = 0;
 	while (format[i])
 	{
-		if (!ft_isascii(format[i]))
+		if (format[i] == '\\' && format[i + 1])
 			return (-1);
 		i++;
 	}
