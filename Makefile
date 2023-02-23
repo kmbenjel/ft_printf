@@ -6,7 +6,7 @@
 #    By: kbenjell <kbenjell@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/18 19:00:43 by kbenjell          #+#    #+#              #
-#    Updated: 2023/02/22 14:27:37 by kbenjell         ###   ########.fr        #
+#    Updated: 2023/02/23 00:58:27 by kbenjell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC = 	ft_printf.c \
 		libft/ft_strnstr.c \
 		libft/ft_toupper.c \
 		libft/ft_strchr.c \
+		libft/ft_isascii.c \
 		libft/ft_strjoin.c \
 		conversion_functions/ft_print_character.c \
 		conversion_functions/ft_print_decimal.c \
